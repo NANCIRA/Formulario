@@ -21,7 +21,36 @@ return item;
  
 const GuardarDB = () => {
 
-    localStorage.setItem('clientes', JSON.stringify(arrayPoliza))
+    localStorage.setItem('productos', JSON.stringify(arrayPoliza));
+}
+
+const LeerDB = () => {
+
+    tipoPolizaUI.innerHTML = '';
+
+    arrayPoliza = JSON.parse(localStorage.getItem('productos'));
+
+    if(arrayPoliza === null){
+        arrayPoliza = [];
+    }else{
+
+
+        arrayPoliza.forEach(element => {
+            tipoPolizaUI.innerHTML += ` <div class="alert alert-danger" role="alert">
+            <span class="material-icons-outlined">
+                date_range
+                </span> 
+                    <span class="material-icons-outlined">
+                        edit_attributes
+                        </span> 
+                        <span class="material-icons-outlined">
+                            delete
+                            </span>
+        </div>`
+            
+        });
+    }
+
 }
 
 
@@ -34,11 +63,13 @@ formularioUI.addEventListener('submit', (e) => {
 
     
     CrearItem(polizaUI);
+    GuardarDB();
+
+
 
     formularioUI.reset();
 
 
-
-
-
 });
+
+document.addEventListener('DOMContentLoaded', LeerDB);
