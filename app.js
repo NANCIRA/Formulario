@@ -22,6 +22,8 @@ return item;
 const GuardarDB = () => {
 
     localStorage.setItem('productos', JSON.stringify(arrayPoliza));
+
+    LeerDB();
 }
 
 const LeerDB = () => {
@@ -37,23 +39,34 @@ const LeerDB = () => {
 
         arrayPoliza.forEach(element => {
             listaPolizaUI.innerHTML += `<div class="alert alert-danger" role="alert">
-             <span class="material-icons" float-left mr-2>
-              article
-             </span> 
-             <b>Texto de la Poliza</b> - Estado
-             <span class="float-right">
-              <i class="material-icons">
-                done
-              </i>
-              <i class="material-icons">
-                delete
-              </i>
-             </span>
-            </div>`
-            
-        });
+             <span class="material-icons" float-left mr-3>article</span><b>${element.poliza}</b> - ${element.estado} <span class="float-right">
+             <i class="material-icons">done</i><i class="material-icons">delete</i></span></div>`
+            });
     }
 
+}
+const EliminarDB = (poliza) => {
+    let indexArray;
+    arrayPoliza.forEach((elemento, index) => {
+
+        if(elemento.poliza === poliza){
+            indexArray = index;
+        }
+    });
+
+    arrayPoliza.splice(indexArray,1);
+    GuardarDB();
+
+}
+
+const EditarDB = (poliza) => {
+    
+    let indexArray = arrayPoliza.findIndex((elemento)=>elemento.poliza ===
+        poliza);
+
+       arrayPoliza[indexArray].estado = true;
+
+       GuardarDB();
 }
 
 
@@ -62,8 +75,8 @@ const LeerDB = () => {
 
 formularioUI.addEventListener('submit', (e) => {
     e.preventDefault();
-    let polizaUI = document.querySelectora('#poliza').value;
-
+    let polizaUI = document.querySelector('#poliza').value;
+º   
     
     CrearItem(polizaUI);
     GuardarDB();
@@ -76,3 +89,23 @@ formularioUI.addEventListener('submit', (e) => {
 });
 
 document.addEventListener('DOMContentLoaded', LeerDB);
+
+listaPolizaUI.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+      if(e.target.innerHTML === 'done' || e.target.innerHTML === 'delete'){
+        let texto = e.path[2].childNodes[2].innerHTML;
+        if(e.target.innerHTML === 'delete'){
+            //Acción de eliminar
+            EliminarDB(texto);
+        }
+       if(e.target.innerHTML === 'done'){
+           //Acción de editar
+
+       }
+
+    }
+
+
+});
