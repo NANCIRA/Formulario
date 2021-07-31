@@ -36,11 +36,20 @@ const LeerDB = () => {
 
 
         arrayPoliza.forEach(element => {
-            listaPolizaUI.innerHTML += ` <div class="alert alert-danger" role="alert">
-                <span class="material-icons">
-                        article
-                        </span> 
-                </div>`
+            listaPolizaUI.innerHTML += `<div class="alert alert-danger" role="alert">
+             <span class="material-icons" float-left mr-2>
+              article
+             </span> 
+             <b>Texto de la Poliza</b> - Estado
+             <span class="float-right">
+              <i class="material-icons">
+                done
+              </i>
+              <i class="material-icons">
+                delete
+              </i>
+             </span>
+            </div>`
             
         });
     }
