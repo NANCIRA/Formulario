@@ -1,7 +1,7 @@
 // Variables globales
 
 const formularioUI =  document.querySelector('#formulario');
-const tipoPolizaUI = document.getElementById('tipoPoliza');
+const listaPolizaUI = document.getElementById('listaPoliza');
 let arrayPoliza = [];
 
 // Funciones
@@ -26,7 +26,7 @@ const GuardarDB = () => {
 
 const LeerDB = () => {
 
-    tipoPolizaUI.innerHTML = '';
+    listaPolizaUI.innerHTML = '';
 
     arrayPoliza = JSON.parse(localStorage.getItem('productos'));
 
@@ -36,17 +36,11 @@ const LeerDB = () => {
 
 
         arrayPoliza.forEach(element => {
-            tipoPolizaUI.innerHTML += ` <div class="alert alert-danger" role="alert">
-            <span class="material-icons-outlined">
-                date_range
-                </span> 
-                    <span class="material-icons-outlined">
+            listaPolizaUI.innerHTML += ` <div class="alert alert-danger" role="alert">
+                <span class="material-icons-outlined">
                         edit_attributes
                         </span> 
-                        <span class="material-icons-outlined">
-                            delete
-                            </span>
-        </div>`
+                </div>`
             
         });
     }
@@ -59,7 +53,7 @@ const LeerDB = () => {
 
 formularioUI.addEventListener('submit', (e) => {
     e.preventDefault();
-    let polizaUI = document.querySelector('#poliza').value;
+    let polizaUI = document.querySelectorall('#poliza').value;
 
     
     CrearItem(polizaUI);
