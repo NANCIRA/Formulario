@@ -37,8 +37,8 @@ const LeerDB = () => {
 
         arrayPoliza.forEach(element => {
             listaPolizaUI.innerHTML += ` <div class="alert alert-danger" role="alert">
-                <span class="material-icons-outlined">
-                        edit_attributes
+                <span class="material-icons">
+                        article
                         </span> 
                 </div>`
             
@@ -53,7 +53,7 @@ const LeerDB = () => {
 
 formularioUI.addEventListener('submit', (e) => {
     e.preventDefault();
-    let polizaUI = document.querySelectorall('#poliza').value;
+    let polizaUI = document.querySelectora('#poliza').value;
 
     
     CrearItem(polizaUI);
