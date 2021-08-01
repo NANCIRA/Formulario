@@ -1,8 +1,14 @@
-h3{
-    <span class="material-icons-outlined">
-article
-</span>
+*{
+    text-align: center
+    font bold;
 }
     
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ i {text-align: right;
+}
     
         
