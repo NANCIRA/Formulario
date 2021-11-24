@@ -1,48 +1,52 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>mi formulario</title>
-    </head>
-  <body>
-     <div class="container mt-5">
-      <h3> 
-        <span class="material-icons">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>mi formulario</title>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h3>
+      <span class="material-icons">
+        article
+      </span>
+      MIS POLIZAS
+    </h3>
+
+    <form id="formulario">
+      <input type="text" id="poliza" class="form-control my-3">
+      <input type="number" id="numeroPoliza" class="form-control my-3">
+      <input type="date" id="fechaExpiracion" class="form-control my-3">
+      <button type="submit" class="btn btn-danger">Guardar</button>
+    </form>
+
+    <div id="tipoPoliza" class="mt-4">
+      <div class="alert alert-danger" role="alert">
+        <span class="material-icons" float-left mr-2>
           article
         </span>
-          MIS POLIZAS
-      </h3>
-         
-      <form id="formulario">
-        <input type="text" id="poliza" class="form-control my-3">
-        <input type="number" id="numeroPoliza" class="form-control my-3">
-        <input type="date" id="fechaExpiracion" class="form-control my-3">
-        <button type="submit" class="btn btn-danger">Guardar</button>
-      </form>
-        
-      <div id="tipoPoliza" class="mt-4">
-       <div class="alert alert-danger" role="alert">
-          <span class="material-icons" float-left mr-2>
-            article
-          </span> 
-          <b>Texto de la Poliza</b> - Estado
-          <span class="float-right">
-            <i class="material-icons">
-              done
-            </i>
-            <i class="material-icons">
-              delete
-            </i>
-          </span>
-        </div>
-       </div>
+        <b>Texto de la Poliza</b> - Estado
+        <span class="float-right">
+          <i class="material-icons">
+            done
+          </i>
+          <i class="material-icons">
+            delete
+          </i>
+        </span>
       </div>
-         
-    <script src="app.js"></script>
-  </body>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
 </html>
